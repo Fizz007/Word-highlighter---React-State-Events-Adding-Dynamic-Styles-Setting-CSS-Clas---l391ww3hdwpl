@@ -1,13 +1,10 @@
 import React from 'react';
 
-export const ParagraphInput = ({ pRef }) => {
+export const WordInput = ({handleChange,value}) => {
     return (
-        <>
-            Enter paragraph here
-            <div id="paragraph-input"
-                contentEditable
-            >
-            </div>
+        <>   
+            <label htmlFor="word-input">Enter word to be highlighted here</label>
+            <input id="word-input" type={"text"} onChange={(e)=>handleChange(e.target.value)} value={value}/>
         </>
     )
 }
