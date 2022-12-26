@@ -1,10 +1,16 @@
 import React from 'react';
 
-export const WordInput = ({handleChange,value}) => {
+export const ParagraphInput = ({ pRef }) => {
     return (
-        <>   
-            <label htmlFor="word-input">Enter word to be highlighted here</label>
-            <input id="word-input" type={"text"} onChange={(e)=>handleChange(e.target.value)} value={value}/>
+        <>
+            Enter paragraph here
+            <div id="paragraph-input"
+                contentEditable
+                // onChange={worker}
+                dangerouslySetInnerHTML={{ __html: pRef.current ? pRef.current.innerHTML : 'Enter Text Here' }}
+                ref={pRef}
+            >
+            </div>
         </>
     )
 }
